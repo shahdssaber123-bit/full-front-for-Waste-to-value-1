@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Sora', system-ui, sans-serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+    /* Pure white canvas — maximum readability */
+    --background: 0 0% 100%;
+    --foreground: 220 28% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 28% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 28% 10%;
+
+    /* Primary — deep indigo-slate: premium, modern, trustworthy */
+    --primary: 230 55% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary — soft periwinkle-grey */
+    --secondary: 225 30% 94%;
+    --secondary-foreground: 230 40% 22%;
+
+    /* Muted — cool light grey */
+    --muted: 220 18% 95%;
+    --muted-foreground: 220 14% 46%;
+
+    /* Accent — warm amber-gold: energy, sustainability */
+    --accent: 36 90% 52%;
+    --accent-foreground: 220 28% 10%;
+
+    --destructive: 0 72% 46%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 90%;
+    --input: 220 16% 90%;
+    --ring: 230 55% 38%;
+
+    --chart-1: 230 55% 38%;
+    --chart-2: 36 90% 52%;
+    --chart-3: 195 68% 40%;
+    --chart-4: 145 52% 36%;
+    --chart-5: 260 48% 44%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar — deep navy */
+    --sidebar-background: 228 38% 10%;
+    --sidebar-foreground: 220 18% 88%;
+    --sidebar-primary: 230 55% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 228 30% 16%;
+    --sidebar-accent-foreground: 220 18% 88%;
+    --sidebar-border: 228 26% 18%;
+    --sidebar-ring: 230 55% 38%;
+  }
+
+  .dark {
+    --background: 228 28% 8%;
+    --foreground: 220 18% 94%;
+    --card: 228 24% 11%;
+    --card-foreground: 220 18% 94%;
+    --popover: 228 24% 11%;
+    --popover-foreground: 220 18% 94%;
+    --primary: 230 60% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 228 20% 18%;
+    --secondary-foreground: 220 18% 94%;
+    --muted: 228 18% 15%;
+    --muted-foreground: 220 12% 58%;
+    --accent: 36 82% 56%;
+    --accent-foreground: 220 28% 10%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 228 16% 20%;
+    --input: 228 16% 20%;
+    --ring: 230 60% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-heading { font-family: var(--font-heading); }
+  .font-body    { font-family: var(--font-body); }
+
+  /* Deep navy → indigo */
+  .bg-gradient-hero {
+    background: linear-gradient(150deg, hsl(228 40% 7%), hsl(230 48% 18%), hsl(228 36% 10%));
+  }
+  /* Primary indigo */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(230 55% 34%), hsl(230 55% 44%));
+  }
+  /* Legacy alias so Navbar/Register still compile */
+  .bg-gradient-wine {
+    background: linear-gradient(135deg, hsl(230 55% 34%), hsl(230 55% 44%));
+  }
+
+  /* Warm off-white section bg */
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, hsl(220 28% 98%), hsl(225 22% 96%));
+  }
+
+  /* Gradient texts */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(230 55% 34%), hsl(230 52% 52%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-wine {
+    background: linear-gradient(135deg, hsl(230 55% 34%), hsl(230 52% 52%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(36 90% 42%), hsl(36 80% 54%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gold { color: hsl(36 80% 42%); }
+
+  /* Section eyebrow labels */
+  .gold-label {
+    color: hsl(36 80% 40%);
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+  }
+
+  /* Subtle surface tint */
+  .bg-warm-surface {
+    background: hsl(220 28% 98%);
+  }
+}
